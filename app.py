@@ -65,12 +65,15 @@ def display_messages():
             display_message(role, content)
 
 
-def ask_gpt(prompt, temperature=0.5):
+def ask_gpt():
     """Generates an answer using OpenAI API.
 
     See also:
     - https://platform.openai.com/docs/api-reference/completions/create?lang=python
     """
+    prompt = st.session_state.prompt
+    temperature = st.session_state.temperature
+    
     # Check if api_key is empty
     if not st.session_state.get('api_key'):
         st.error('Please set your OpenAI API key in the sidebar.')
@@ -123,11 +126,10 @@ def ensure_conversation():
 def handle_generate():
     """Handles the click event of the generate button.
     """
-    prompt = st.session_state.prompt
-    temperature = st.session_state.temperature
-    ask_gpt(prompt, temperature)
+    ask_gpt()
     # 清空输入框
-    st.session_state.prompt = ''
+    st.session_state['prompt'] = ''
+    # prompt_input = None
 
 
 # Your OpenAI API key here (required)
@@ -188,7 +190,7 @@ if len(messages) > 1:
 # Input field and generate button
 col1, col2 = st.columns([8, 1])
 with col1:
-    st.text_input(
+    prompt_input = st.text_input(
         'Prompt',
         init_prompt or '',
         key='prompt',
