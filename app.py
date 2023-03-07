@@ -13,8 +13,8 @@ st.set_page_config(
     layout='wide',
     initial_sidebar_state='expanded',
     menu_items={
-        'Get Help': 'https://github.com/gutk/chatgpt-steamlit',
-        'Report a bug': "https://github.com/gutk/chatgpt-steamlit/issues",
+        'Get Help': 'https://github.com/gukt/streamlit-chatgpt',
+        'Report a bug': "https://github.com/gukt/streamlit-chatgpt/issues",
         'About': about
     }
 )

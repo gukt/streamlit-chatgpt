@@ -4,6 +4,7 @@ about = """
 ### Welcome to ChatGPT Demo 👏
 
 Author: [gukt](https://github.com/gukt)
+Source Code: https://github.com/gukt/streamlit-chatgpt
 """
 
 icons = dict(
