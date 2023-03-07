@@ -122,7 +122,7 @@ def handle_generate():
     temperature = st.session_state.temperature
     ask_gpt(prompt, temperature)
     # 清空输入框
-    # st.session_state.prompt = ''
+    st.session_state.prompt = ''
 
 
 # Your OpenAI API key here (required)
